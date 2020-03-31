@@ -15,7 +15,7 @@ const Upload = () => {
         e.preventDefault();
         const formData = new FormData();
         formData.append('profileImg', profileImg);
-        axios.post('http://localhost:4000/api/user-profile', formData, {
+        axios.post('api/user-profile', formData, {
         }).then(res => {
             console.log(res);
         })
@@ -23,7 +23,7 @@ const Upload = () => {
     }
 
     async function getUsers() {
-        const res = await axios.get('http://localhost:4000/api');
+        const res = await axios.get('api');
         setUsers(res.data.users);
     }
 
